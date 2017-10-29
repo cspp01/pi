@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.clearfix{
+    zoom:1;
+}
+#div{
+    margin:0 auto;
+}
+#div dt,#div dl,#div dd{
+    float:left;
+}
+#div dt{
+    text-align:center;
+}
+#div dd{
+    overflow:hidden;
+}

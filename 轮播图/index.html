@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<div class="main"></div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.banner.js"></script>
+<script>
+    $(function(){
+        var op={
+            images:[
+                'images/banner1.jpg',
+                'images/banner2.jpg',
+                'images/banner3.jpg',
+                'images/banner4.jpg',
+                'images/banner5.jpg'
+            ],
+            rollTime:1000,
+            BWidth:100,
+            BHeight:20,
+            BBMarginRight:20,
+            BBShapeFillet:5,
+            BBBackground:'red',
+            BBBorderStyle:[
+                '10px',
+                '1px',
+                '#fff',
+                '#ff4b0c'
+            ]//选中的边框模糊，边宽，边框颜色，背景颜色
+        };
+        $('.main').banner(op);
+    });
+</script>
+</body>
+</html>

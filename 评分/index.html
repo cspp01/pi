@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        p{
+            float:left;
+            line-height:30px;
+            font-size:20px;
+            margin-top:20px;
+            margin-left:50px;
+        }
+        ul{
+            float:left;
+            margin-top:20px;
+        }
+        body>div{
+            float:left;
+            margin-top:20px;
+            margin-left:10px;
+            line-height:30px;
+            font-size:14px;
+        }
+        ul:after{
+            content:'';
+            display:table;
+            clear:both;
+        }
+        ul{
+            zoom:1;
+        }
+        input{
+            display:none;
+        }
+        li{
+            float:left;
+            list-style:none;
+            margin-right:5px;
+        }
+        li div{
+            display:block;
+            width:30px;
+            height:30px;
+            background-image:url("./img/nst.gif");
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+</head>
+<body>
+<p>总体评分：</p>
+<ul>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+</ul>
+<div id="div">
+    <div>
+        小提示：有本事点我。
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function(){
+        var $li=document.getElementsByTagName('li');
+        var $div=document.getElementById('div');
+        var arr=[
+            '很差',
+            '一般',
+            '还行',
+            '很好',
+            '力荐'
+        ];
+        for(var i=0;i<$li.length;i++){
+            $li[i].index=i;
+            $li[i].onclick=function(){
+                for(var l=0;l<$li.length;l++){
+                    $li[l].getElementsByTagName('div')[0].style.backgroundImage='';
+                }
+                if(this.index>1){
+                    for(var j=0;j<this.index+1;j++){
+                        $li[j].getElementsByTagName('div')[0].style.backgroundImage='url("./img/sth.gif")';//url("./img/sth.gif");付不了属性。
+//                        console.log($li[j].getElementsByTagName('div')[0].style.backgroundImage);
+                    }
+                }else {
+                    for (var k = 0; k < this.index + 1; k++) {
+                        $li[k].getElementsByTagName('div')[0].style.backgroundImage = 'url("./img/nsg.gif")';
+                    }
+                }
+                console.log($div);
+                $div.innerHTML=arr[this.index];
+                $div.style.cssText='font-size:20px;color:red;';
+            }
+        }
+    }
+</script>
+</html>

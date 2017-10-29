@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+<div id="menu">
+</div>
+<script src="./js/main.js"></script>
+<script>
+    window.onload=function(){
+        var warehouse=document.getElementById('menu');
+        var cus={
+            'content':{
+                '1':['menu1',['menu11','menu12','menu13']],
+                '2':['menu2',['menu21','menu22','menu23','menu24']],
+                '3':['menu3',['menu31','menu32','menu33','menu34','menu35']],
+                '4':['menu4',['menu41','menu42','menu43','menu44','menu45']]
+            }
+        };
+        warehouse.__menu(cus);
+    };
+</script>
+</body>
+</html>

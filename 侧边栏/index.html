@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #side-slip-out{
+            width:300px;
+            height:500px;
+            background:#5BC4BE;
+            position:fixed;
+            top:50%;
+            margin-top:-250px;
+            left:-300px;
+            border-radius:0 15px 15px 0;
+        }
+        #side-slip-out-inp{
+            position:absolute;
+            top:50%;
+            width:50px;
+            height:100px;
+            margin-top:-50px;
+            right:-50px;
+            background-color:lightcoral;
+            border-radius:0 15px 15px 0;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script src="./js/cc.js"></script>
+<script src="./js/sideShow.js"></script>
+<script>
+    $$(function(){
+        var $body = $$('body')[0];
+        $$($body,'<div id="side-slip-out"><a href="#" id="side-slip-out-inp"></a></div>');
+        var $div = $$('#side-slip-out');
+        var $inp = $$('#side-slip-out-inp');
+        var isShow=false;
+
+        $inp.onclick=function(){
+            if(isShow){
+                set($div,'left',-9,-300);
+                isShow=false;
+            }else{
+                set($div,'left',9,0);
+                isShow=true;
+            }
+        };
+    });
+</script>
+</html>
